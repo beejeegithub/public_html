@@ -1,4 +1,4 @@
-<div class="container">
+<div style="padding-left: 50px; padding-right: 50px;">
 			<br />
 			<h3 align="center">Task менеджер</h3>
 			<br />
@@ -22,6 +22,7 @@
 							<th>Выполнить</th>
 							<th>Вернуть в работу</th>
 							<th class="order_by_success order asc" value="success" style="cursor: pointer;">Статус</th>
+							<th>Отредактировано администратором</th>
 						</tr>
 					</thead>
 					<tbody></tbody>

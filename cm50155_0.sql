@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Авг 07 2020 г., 15:48
+-- Время создания: Авг 09 2020 г., 00:43
 -- Версия сервера: 5.7.30-33
 -- Версия PHP: 5.6.40
 
@@ -32,15 +32,16 @@ CREATE TABLE IF NOT EXISTS `records` (
   `email` varchar(500) NOT NULL,
   `description` varchar(500) NOT NULL,
   `success` int(1) NOT NULL,
+  `change_admin` varchar(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `records`
 --
 
-INSERT INTO `records` (`id`, `name`, `email`, `description`, `success`) VALUES
-(199, 'test', 'test@mail.com', 'test job', 0);
+INSERT INTO `records` (`id`, `name`, `email`, `description`, `success`, `change_admin`) VALUES
+(215, 'test', 'test@test.com', 'test job', 0, 'Нет');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
