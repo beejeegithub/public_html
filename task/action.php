@@ -2,7 +2,7 @@
 if ($_POST["action"] == 'fetch_single')
 	{
 		$id = $_POST["id"];
-		$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=fetch_single&id=".$id."";
+		$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=fetch_single&id=".$id."";
 		$client = curl_init($api_url);
 		curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($client);
@@ -16,7 +16,7 @@ if ($_POST["action"] == 'fetch_single')
 			'text_email'	   =>	$_POST['text_email'],
 			'text_description' => $_POST['text_description']
 		);
-		$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=insert";
+		$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=insert";
 		$client = curl_init($api_url);
 		curl_setopt($client, CURLOPT_POST, true);
 		curl_setopt($client, CURLOPT_POSTFIELDS, $form_data1);
@@ -39,7 +39,7 @@ if ($_POST["action"] == 'fetch_single')
 	
 if ($_POST["action"] == "delete") {
 	$id = $_POST["id"];
-	$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=delete&id=".$id."";
+	$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=delete&id=".$id."";
 	$client = curl_init($api_url);
 	curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 	$response = curl_exec($client);
@@ -53,7 +53,7 @@ if ($_POST["action"] == "update") {
 		"text_description" => $_POST["text_description"],
 		"id"               => $_POST["hidden_id"]
 	);
-	$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=update";
+	$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=update";
 	$client = curl_init($api_url);
 	curl_setopt($client, CURLOPT_POST, true);
 	curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
@@ -75,7 +75,7 @@ if ($_POST["action"] == "update") {
 
 if ($_POST["action"] =="complete") {
 	$id = $_POST["id"];
-	$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=complete&id=".$id."";
+	$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=complete&id=".$id."";
 	$client = curl_init($api_url);
 	curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 	$response = curl_exec($client);
@@ -84,7 +84,7 @@ if ($_POST["action"] =="complete") {
 
 if ($_POST["action"] =="backcomplete") {
 	$id = $_POST["id"];
-	$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=backcomplete&id=".$id."";
+	$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=backcomplete&id=".$id."";
 	$client = curl_init($api_url);
 	curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 	$response = curl_exec($client);

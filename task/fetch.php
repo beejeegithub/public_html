@@ -24,7 +24,7 @@ $page = $_POST["page"];
 
 if ($_POST["action"] =="fetch") {
 
-$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=fetch_all&order_by_text=".$order_by_text."&order_by_text_asc_or_desc=".$order_by_text_asc_or_desc."&page=".$page."";
+$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=fetch_all&order_by_text=".$order_by_text."&order_by_text_asc_or_desc=".$order_by_text_asc_or_desc."&page=".$page."";
 
 $client = curl_init($api_url);
 
@@ -87,7 +87,7 @@ echo $output;
 }
 else if ($_POST["action"] =="page") {
 
-$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=fetch_all&order_by_text=".$order_by_text."&order_by_text_asc_or_desc=".$order_by_text_asc_or_desc."&page=".$page."";
+$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=fetch_all&order_by_text=".$order_by_text."&order_by_text_asc_or_desc=".$order_by_text_asc_or_desc."&page=".$page."";
 
 $client = curl_init($api_url);
 
@@ -150,7 +150,7 @@ echo $output;
 }
 else
 {
-$api_url = "http://cm50155-wordpress.tw1.ru/task/handler.php?action=fetch_all";
+$api_url = $_SERVER["HTTP_HOST"]."/task/handler.php?action=fetch_all";
 
 $client = curl_init($api_url);
 
