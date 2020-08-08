@@ -174,22 +174,7 @@ function update() {
 function complete($id) {
 	$query = "UPDATE records
 	SET success=1 WHERE id='".$id."'";
-	$query_change_admin = "UPDATE records
-	SET change_admin='Да' WHERE id='".$id."'";
 	$statement = $this->connect->prepare($query);
-	if ($statement->execute()) {
-		$data[] = array(
-			"success" => "1"
-		);
-	}
-	else
-	{
-		$data[] = array(
-			"success" => "0"
-		);
-	}
-
-	$statement = $this->connect->prepare($query_change_admin);
 	if ($statement->execute()) {
 		$data[] = array(
 			"success" => "1"
@@ -207,22 +192,7 @@ function complete($id) {
 function backcomplete($id) {
 	$query = "UPDATE records
 	SET success=0 WHERE id='".$id."'";
-	$query_change_admin = "UPDATE records
-	SET change_admin='Да' WHERE id='".$id."'";
 	$statement = $this->connect->prepare($query);
-	if ($statement->execute()) {
-		$data[] = array(
-			"success" => "1"
-		);
-	}
-	else
-	{
-		$data[] = array(
-			"success" => "0"
-		);
-	}
-
-	$statement = $this->connect->prepare($query_change_admin);
 	if ($statement->execute()) {
 		$data[] = array(
 			"success" => "1"
